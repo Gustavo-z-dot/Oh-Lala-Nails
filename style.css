@@ -603,20 +603,46 @@ header {
     transform: scale(1.05);
 }
 
+.button.gallery-grid {
+    text-align: center;
+    margin-top: 20px;
+}
+.btn-gallery {
+    display: inline-block;
+    margin-top: 30px;
+    background: var(--pink-light);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+
 /* 9. SECCIÓN CONTACTO (BOTONES RRSS) */
 /* Ajuste fino para el bloque de contacto lila */
 /* Estilos para la sección de contacto */
 .contact-section {
-    padding: 60px 20px;
+    /* Ruta de tu imagen y configuración de fondo */
+    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.95)), url('footer.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    /* Cambia a 'fixed' si quieres un efecto parallax */
+    color: white;
+    padding: 60px 20px 20px;
     text-align: center;
-    /* Centra el H2 y el P */
-    background-color: #ffffff;
+    position: relative;
 }
 
 .contact-content h2 {
     font-size: 26px;
     margin-bottom: 10px;
-    color: #333;
+    color: white;
+}
+
+.contact-content p {
+    color: white;
 }
 
 /* Contenedor de los botones */
@@ -626,7 +652,7 @@ header {
     /* Centra los botones horizontalmente */
     gap: 15px;
     /* Espacio entre ellos */
-    margin-top: 25px;
+    margin-top: 5px;
     flex-wrap: wrap;
     /* Importante para móvil */
 }
@@ -634,6 +660,7 @@ header {
 /* Estilo de los botones (btn-contact) */
 .btn-contact {
     display: inline-flex;
+    margin: 10px;
     align-items: center;
     justify-content: center;
     padding: 14px 30px;
@@ -983,5 +1010,8 @@ address.footer-info {
     .hero-content h1,
     .hero-content h2 {
         font-size: 3.2rem;
+    }
+    .btn-contact {
+        margin: 15px;
     }
 }
