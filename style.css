@@ -1,0 +1,987 @@
+/* 1. VARIABLES DE COLOR */
+/* 1. VARIABLES Y CONFIGURACIÓN BASE */
+html {
+    scroll-behavior: smooth;
+    /* <--- ESTA ES LA MAGIA */
+}
+
+:root {
+    --pink-light: #D8A1C4;
+    /* El lila/rosa de tu barra superior */
+    --blue-dark: #2C3E50;
+    /* El azul oscuro de tus botones */
+    --white: #ffffff;
+    --text-dark: #333;
+
+    /* Mantenemos estos para la sección de beneficios nueva */
+    --pink-medium: #D1A7C4;
+    --blue-medium: #89A7BD;
+}
+
+/* 2. RESET Y BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 3. TOP BAR (BARRA SUPERIOR LILA) */
+#topnav {
+    min-height: 50px;
+    background-color: var(--pink-light) !important;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#topnav-left-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+
+#topnav-left-text p,
+#topnav-left-text a.phone-link {
+    color: #000;
+    text-decoration: aliceblue;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.icon-svg {
+    display: flex;
+    align-items: center;
+}
+
+#topnav-left-text .icon-svg {
+    margin-left: 0 !important;
+}
+
+#topnav-left-text svg {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+}
+
+.btn-get-touch {
+    background: var(--blue-dark);
+    color: white;
+    border: none;
+    padding: 0;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+
+.btn-get-touch:hover {
+    background: white;
+    color: var(--blue-dark);
+}
+
+/* 4. HEADER & NAV (LOGO Y MENÚ) - AHORA FIJO */
+header {
+    padding: 10px 0;
+    /* Un poco más fino para que no robe pantalla */
+    background-color: var(--white) !important;
+    border-bottom: 1px solid #eee;
+
+    /* MAGIA PARA QUE SEA FIJO */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Para que pase por encima de las fotos y el slider */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil al bajar */
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 100%;
+    padding: 0 16px;
+}
+
+.logo {
+    position: static;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    gap: 8px;
+}
+
+.logo img {
+    height: 38px;
+}
+
+.logo span {
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.main-nav {
+    display: none;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: var(--pink-light);
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
+}
+
+/* 5. HERO / SLIDER */
+.hero {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.btn-hero {
+    display: inline-block;
+    margin-top: 30px;
+    background: var(--pink-light);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* 6. BENEFICIOS */
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    /* Fondo limpio */
+}
+
+.benefit-item {
+    padding: 30px;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    background: transparent;
+}
+
+/* Efecto al pasar el mouse por la sección */
+.benefit-item:hover {
+    transform: translateY(-10px);
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    /* Sombra muy suave */
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--blue-mid);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2rem;
+    position: relative;
+    transition: 0.3s;
+    /* Sombra interna para dar profundidad al círculo */
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2), 0 10px 20px rgba(114, 151, 177, 0.3);
+}
+
+/* Efecto de pulso suave en el icono al hacer hover */
+.benefit-item:hover .icon-circle {
+    background-color: var(--pink-light);
+    /* Cambia al rosa de tu marca */
+    transform: scale(1.1) rotate(5deg);
+}
+
+.benefits-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px 0;
+}
+
+.benefit-tile {
+    flex: 1 1 300px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+
+    /* Mantenemos la aparición lenta que te gustó */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    /* Bajamos de 1.5s a 0.6s */
+}
+
+.benefit-tile.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Colores de los bloques (Tonos Medios) */
+.tile-pink {
+    background-color: var(--pink-medium);
+    color: #ffffff;
+    /* Texto blanco para que resalte más */
+}
+
+.tile-blue {
+    background-color: var(--blue-medium);
+    color: #ffffff;
+}
+
+.tile-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil al texto */
+}
+
+.tile-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+/* Botones Estilizados */
+.btn-tile {
+    display: inline-block;
+    padding: 14px 35px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    transition: all 0.4s ease;
+    border-radius: 2px;
+    /* Bordes apenas redondeados, muy sutil */
+}
+
+/* Botón oscuro para bloque rosa */
+.btn-dark {
+    background-color: #2C3E50;
+    color: #ffffff;
+}
+
+/* Botón blanco para bloque azul */
+.btn-light {
+    background-color: #ffffff;
+    color: #2C3E50;
+}
+
+.btn-tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.1);
+}
+
+/* Retrasos de aparición (Cascada lenta) */
+.benefit-tile:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.benefit-tile:nth-child(2) {
+    transition-delay: 0.6s;
+}
+
+.benefit-tile:nth-child(3) {
+    transition-delay: 1.1s;
+}
+
+/* 7. SERVICIOS Y PRECIOS (ESTILO UNIFORME) */
+.services {
+    padding: 80px 0;
+    /* Un poco menos de padding general */
+    background: #fdfdfd;
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    /* Menos separación entre tarjetas */
+    margin-top: 40px;
+}
+
+.services .service-card .service-img-wrapper {
+    height: 230px !important;
+    /* !important asegura que ignore otras reglas */
+    width: 100% !important;
+    display: block !important;
+}
+
+.services .service-card .service-img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    /* Evita que la foto se estire feo */
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    /* Sombra un pelín más sutil */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+
+    /* Mantenemos el efecto de aparición */
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* REDUCIENDO TAMAÑO DE FOTO */
+.service-img-wrapper {
+    overflow: hidden;
+    height: 180px;
+    /* <--- ANTES 240px. Ahora mucho más baja */
+    width: 100%;
+}
+
+.service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.service-card:hover .service-img {
+    transform: scale(1.1);
+}
+
+/* COMPACTANDO INFO DE TEXTO */
+.service-info {
+    padding: 18px 20px;
+    /* Reducimos un poco el padding para compensar la foto más grande */
+}
+
+.service-info h3 {
+    font-size: 1.1rem;
+    /* Texto un poco más pequeño */
+    margin-bottom: 8px;
+    color: var(--blue-dark);
+}
+
+.price {
+    font-weight: 700;
+    color: var(--pink-medium);
+    font-size: 1.3rem;
+    /* Precio claro pero no gigante */
+    margin-top: auto;
+    /* Alinea los precios abajo si los títulos varían */
+}
+
+.location {
+    background: #f1f1f1;
+    padding: 60px 20px; /* Un poco menos de padding para que no sea eterno */
+    text-align: center;
+}
+
+.location-content h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--blue-dark);
+}
+
+.location-content p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Contenedor del Mapa Estilizado */
+.map-container {
+    width: 100%;
+    max-width: 900px; /* Para que en PC no sea gigante */
+    margin: 0 auto 30px;
+    border-radius: 15px; /* Bordes redondeados como un app moderna */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra suave */
+    line-height: 0; /* Quita un espacio extra abajo del iframe */
+}
+
+.map-container iframe {
+    filter: grayscale(0.2); /* Un toque elegante, se pone a color al tocarlo */
+    transition: 0.3s;
+}
+
+.map-container iframe:hover {
+    filter: grayscale(0);
+}
+
+.btn-location {
+    display: inline-block;
+    background: var(--blue-dark);
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-location:hover {
+    background: var(--pink-light);
+    transform: translateY(-3px);
+}
+
+/* 8. GALERÍA */
+.gallery-section {
+    background: #f1f1f1;
+    padding: 100px 0;
+    position: relative;
+    text-align: center;
+}
+
+.gallery-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.gallery-vertical {
+    display: none;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-grid img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* 9. SECCIÓN CONTACTO (BOTONES RRSS) */
+/* Ajuste fino para el bloque de contacto lila */
+/* Estilos para la sección de contacto */
+.contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    /* Centra el H2 y el P */
+    background-color: #ffffff;
+}
+
+.contact-content h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Contenedor de los botones */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    /* Centra los botones horizontalmente */
+    gap: 15px;
+    /* Espacio entre ellos */
+    margin-top: 25px;
+    flex-wrap: wrap;
+    /* Importante para móvil */
+}
+
+/* Estilo de los botones (btn-contact) */
+.btn-contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 30px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none !important;
+    /* Elimina el subrayado azul */
+    color: white !important;
+    /* Fuerza el texto a blanco */
+    min-width: 160px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Colores específicos según tu clase */
+.btn-contact.whatsapp {
+    background-color: #25D366;
+}
+
+.btn-contact.instagram {
+    background-color: #E1306C;
+}
+
+/* Efecto al tocar/pasar el mouse */
+.btn-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 10. FOOTER PRINCIPAL */
+.main-footer {
+    /* Ruta de tu imagen y configuración de fondo */
+    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.95)), url('footer.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    /* Cambia a 'fixed' si quieres un efecto parallax */
+    color: white;
+    padding: 80px 0 20px;
+    position: relative;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.footer-brand h3 {
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.footer-brand p {
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.footer-info h4,
+.footer-social h4 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.footer-info p {
+    margin-bottom: 12px;
+    color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+address.footer-info {
+    font-style: normal;
+}
+
+.footer-info a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.social-icons img {
+    width: 32px;
+    height: 32px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Borramos el filtro que los ponía blancos */
+    filter: none;
+    /* Opcional: una sombra sutil para que no se pierdan en el fondo oscuro */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.social-icons img:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    opacity: 0.7;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* 11. SIDEBAR MÓVIL */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -165px;
+    width: 165px;
+    height: 100%;
+    background: var(--blue-dark);
+    color: white;
+    z-index: 1000;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Usa transform en lugar de right */
+    /* Animación más fluida */
+    padding: 60px 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    /* Sombra para dar profundidad */
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* 12. MODAL DE IMÁGENES */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 85%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+}
+
+/* 13. BREAKPOINTS POR RANGO DE DISPOSITIVO */
+
+/* Moviles grandes: 481px en adelante */
+@media (min-width: 481px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tabletas: 768px en adelante */
+@media (min-width: 768px) {
+    #topnav {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 24px;
+        gap: 12px;
+    }
+
+    #topnav-left-text {
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        gap: 12px;
+    }
+
+    #topnav-left-text p,
+    #topnav-left-text a.phone-link {
+        font-size: 0.9rem;
+        letter-spacing: 0;
+    }
+
+    #topnav-left-text svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 0;
+    }
+
+    .btn-get-touch {
+        width: auto;
+        min-width: 180px;
+        padding: 10px 20px;
+        line-height: normal;
+        height: 46px;
+    }
+
+    .header-inner {
+        padding: 0 24px;
+    }
+
+    .logo img {
+        height: 44px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services .service-card .service-img-wrapper {
+        height: 300px !important;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .benefits-tiles {
+        width: 90%;
+        margin: 80px auto;
+    }
+
+    .benefit-tile {
+        min-height: 400px;
+        padding: 50px;
+    }
+}
+
+/* Portatiles: 1024px en adelante */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .hero-content h1,
+    .hero-content h2 {
+        font-size: 2.6rem;
+    }
+
+    .slider-arrow {
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+    }
+
+    .social-icons,
+    .footer-info p {
+        justify-content: flex-start;
+    }
+}
+
+/* Desktop nav completo: 1321px en adelante */
+@media (min-width: 1321px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .main-nav {
+        display: block;
+    }
+
+    .header-inner {
+        justify-content: center;
+        padding: 0 24px;
+    }
+
+    .logo {
+        position: absolute;
+        left: 24px;
+        gap: 10px;
+    }
+
+    .main-nav ul {
+        gap: 16px;
+    }
+
+    .main-nav ul li a {
+        font-size: 0.78rem;
+    }
+}
+
+/* Escritorios y monitores grandes: 1440px en adelante */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    .gallery-grid {
+        max-width: 1600px;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-content h1,
+    .hero-content h2 {
+        font-size: 3.2rem;
+    }
+}
