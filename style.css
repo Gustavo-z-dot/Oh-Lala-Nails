@@ -40,6 +40,7 @@ body {
 }
 
 /* 3. TOP BAR (BARRA SUPERIOR LILA) */
+/* Topnav desactivado temporalmente
 #topnav {
     min-height: 50px;
     background-color: var(--pink-light) !important;
@@ -68,12 +69,14 @@ body {
     margin: 0;
     letter-spacing: 0.5px;
 }
+*/
 
 .icon-svg {
     display: flex;
     align-items: center;
 }
 
+/* Topnav desactivado temporalmente
 #topnav-left-text .icon-svg {
     margin-left: 0 !important;
 }
@@ -101,6 +104,7 @@ body {
     background: white;
     color: var(--blue-dark);
 }
+*/
 
 /* 4. HEADER & NAV (LOGO Y MENÚ) - AHORA FIJO */
 header {
@@ -260,158 +264,198 @@ header {
     right: 20px;
 }
 
-/* 6. BENEFICIOS */
-.benefits {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    padding: 100px 20px;
-    text-align: center;
-    background-color: #ffffff;
-    /* Fondo limpio */
-}
-
-.benefit-item {
-    padding: 30px;
-    border-radius: 20px;
-    transition: all 0.4s ease;
-    background: transparent;
-}
-
-/* Efecto al pasar el mouse por la sección */
-.benefit-item:hover {
-    transform: translateY(-10px);
-    background: #ffffff;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-    /* Sombra muy suave */
-}
-
-.icon-circle {
-    width: 80px;
-    height: 80px;
-    background-color: var(--blue-mid);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-    font-size: 2rem;
-    position: relative;
-    transition: 0.3s;
-    /* Sombra interna para dar profundidad al círculo */
-    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2), 0 10px 20px rgba(114, 151, 177, 0.3);
-}
-
-/* Efecto de pulso suave en el icono al hacer hover */
-.benefit-item:hover .icon-circle {
-    background-color: var(--pink-light);
-    /* Cambia al rosa de tu marca */
-    transform: scale(1.1) rotate(5deg);
-}
-
-.benefits-tiles {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1400px;
-    margin: 40px 0;
-}
-
-.benefit-tile {
-    flex: 1 1 300px;
-    min-height: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-    position: relative;
-
-    /* Mantenemos la aparición lenta que te gustó */
+/* 6. PROMOCION */
+.promo-section {
+    padding: 70px 0;
+    background: radial-gradient(circle at 15% 15%, rgba(216, 161, 196, 0.3), transparent 45%),
+        radial-gradient(circle at 85% 20%, rgba(137, 167, 189, 0.26), transparent 45%),
+        linear-gradient(145deg, #fff5fb 0%, #f5f9ff 55%, #fef7ff 100%);
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    /* Bajamos de 1.5s a 0.6s */
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.benefit-tile.active {
+.promo-section.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Colores de los bloques (Tonos Medios) */
-.tile-pink {
-    background-color: var(--pink-medium);
-    color: #ffffff;
-    /* Texto blanco para que resalte más */
+.promo-wrap {
+    display: flex;
+    justify-content: center;
 }
 
-.tile-blue {
-    background-color: var(--blue-medium);
-    color: #ffffff;
+.promo-card {
+    width: min(980px, 100%);
+    padding: 38px 26px;
+    text-align: center;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: linear-gradient(130deg, rgba(44, 62, 80, 0.96) 0%, rgba(84, 111, 140, 0.92) 100%);
+    box-shadow: 0 20px 45px rgba(35, 47, 60, 0.25);
+    transform-style: preserve-3d;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.tile-content h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    /* Sombra sutil al texto */
+.promo-card::before {
+    content: "";
+    position: absolute;
+    top: -35%;
+    left: -20%;
+    width: 68%;
+    height: 200%;
+    transform: rotate(24deg);
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.22) 52%, transparent 100%);
+    animation: promo-shine 6.2s ease-in-out infinite;
 }
 
-.tile-content p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 35px;
-    font-weight: 400;
-}
-
-/* Botones Estilizados */
-.btn-tile {
+.promo-kicker {
     display: inline-block;
-    padding: 14px 35px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    font-size: 0.76rem;
+    color: #233241;
+    background: #f8dbe8;
+}
+
+.promo-card h2 {
+    color: #ffffff;
+    font-size: clamp(1.8rem, 4.8vw, 3rem);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.promo-price {
+    margin-top: 14px;
+    margin-bottom: 16px;
+    color: #ffeff8;
+    font-weight: 700;
+    line-height: 1;
+    font-size: clamp(2rem, 7vw, 3.6rem);
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+}
+
+.promo-price.promo-pop {
+    animation: promo-pop 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.promo-description {
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.promo-actions {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-promo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 190px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 1.5px;
-    transition: all 0.4s ease;
-    border-radius: 2px;
-    /* Bordes apenas redondeados, muy sutil */
+    letter-spacing: 0.8px;
+    padding: 14px 24px;
+    border-radius: 10px;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease, color 0.28s ease;
 }
 
-/* Botón oscuro para bloque rosa */
-.btn-dark {
-    background-color: #2C3E50;
+.btn-promo-primary {
+    background-color: #f7bfd8;
+    color: #1f2e3c;
+}
+
+.btn-promo-secondary {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.7);
     color: #ffffff;
 }
 
-/* Botón blanco para bloque azul */
-.btn-light {
-    background-color: #ffffff;
-    color: #2C3E50;
-}
-
-.btn-tile:hover {
+.btn-promo:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    filter: brightness(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Retrasos de aparición (Cascada lenta) */
-.benefit-tile:nth-child(1) {
-    transition-delay: 0.1s;
+.btn-promo-primary:hover {
+    background-color: #ffd7e8;
 }
 
-.benefit-tile:nth-child(2) {
-    transition-delay: 0.6s;
+.btn-promo-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
-.benefit-tile:nth-child(3) {
-    transition-delay: 1.1s;
+.promo-sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.promo-sparkle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    width: var(--sparkle-size, 6px);
+    height: var(--sparkle-size, 6px);
+    left: var(--sparkle-left, 50%);
+    top: var(--sparkle-top, 50%);
+    opacity: 0;
+    animation: promo-float var(--sparkle-duration, 4.5s) ease-in-out var(--sparkle-delay, 0s) infinite;
+}
+
+@keyframes promo-shine {
+    0%,
+    24% {
+        transform: translateX(-120%) rotate(24deg);
+    }
+
+    44% {
+        transform: translateX(245%) rotate(24deg);
+    }
+
+    100% {
+        transform: translateX(245%) rotate(24deg);
+    }
+}
+
+@keyframes promo-pop {
+    0% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.07);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes promo-float {
+    0%,
+    100% {
+        opacity: 0;
+        transform: translateY(12px) scale(0.8);
+    }
+
+    40%,
+    60% {
+        opacity: 0.72;
+        transform: translateY(-7px) scale(1);
+    }
 }
 
 /* 7. SERVICIOS Y PRECIOS (ESTILO UNIFORME) */
@@ -870,6 +914,7 @@ address.footer-info {
 
 /* Tabletas: 768px en adelante */
 @media (min-width: 768px) {
+    /* Topnav desactivado temporalmente
     #topnav {
         flex-direction: row;
         justify-content: space-between;
@@ -903,6 +948,7 @@ address.footer-info {
         line-height: normal;
         height: 46px;
     }
+    */
 
     .header-inner {
         padding: 0 24px;
@@ -924,14 +970,12 @@ address.footer-info {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    .benefits-tiles {
-        width: 90%;
-        margin: 80px auto;
+    .promo-section {
+        padding: 92px 0;
     }
 
-    .benefit-tile {
-        min-height: 400px;
-        padding: 50px;
+    .promo-card {
+        padding: 52px 48px;
     }
 }
 
