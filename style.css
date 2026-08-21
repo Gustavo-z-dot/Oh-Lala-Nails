@@ -402,16 +402,16 @@ header {
     border: 1px solid var(--surface-border);
     border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.35s ease, opacity 0.35s ease;
+    transition: transform 0.35s ease;
     display: flex;
     flex-direction: column;
-    opacity: 0;
-    transform: translateY(28px);
+    opacity: 1;
+    transform: none;
 }
 
 .service-card.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 .service-card:hover {

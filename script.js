@@ -92,29 +92,6 @@ document.addEventListener("DOMContentLoaded", function() {
     targets.forEach((target) => observer.observe(target));
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const serviceObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const cards = entry.target.querySelectorAll('.service-card');
-                cards.forEach((card, index) => {
-                    // Crea el efecto de cascada (la 1ra tarjeta 0ms, 2da 200ms, 3ra 400ms...)
-                    setTimeout(() => {
-                        card.classList.add('visible');
-                    }, index * 200); 
-                });
-                // Una vez que aparecen, dejamos de observar la sección
-                serviceObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.2 });
-
-    const servicesSection = document.querySelector('.services-grid');
-    if (servicesSection) {
-        serviceObserver.observe(servicesSection);
-    }
-});
-
 document.addEventListener('DOMContentLoaded', () => {
     const openBtn = document.getElementById('menu-open');
     const closeBtn = document.getElementById('menu-close');
