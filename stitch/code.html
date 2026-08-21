@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Oh Lalá! Nails - Elegance &amp; Precision</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#cec5bc",
+                        "secondary-fixed": "#eee0d5",
+                        "tertiary": "#6c5a5b",
+                        "primary": "#645d55",
+                        "inverse-surface": "#313030",
+                        "outline": "#7d766e",
+                        "surface-bright": "#fcf9f8",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#d9c1c2",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-fixed": "#211a14",
+                        "surface": "#fcf9f8",
+                        "on-tertiary-container": "#796667",
+                        "tertiary-fixed": "#f6dddd",
+                        "primary-fixed-dim": "#cec5bb",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#4c463e",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#544344",
+                        "tertiary-container": "#ffe7e8",
+                        "on-secondary-fixed-variant": "#4e453d",
+                        "on-surface": "#1c1b1b",
+                        "secondary-container": "#ebddd2",
+                        "secondary-fixed-dim": "#d2c4b9",
+                        "on-tertiary-fixed": "#261819",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-primary-fixed": "#1f1b14",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#cec5bb",
+                        "surface-tint": "#645d55",
+                        "on-surface-variant": "#4b463f",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container": "#f0eded",
+                        "on-background": "#1c1b1b",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ebe1d6",
+                        "surface-container-low": "#f6f3f2",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#706a61",
+                        "error": "#ba1a1a",
+                        "background": "#fcf9f8",
+                        "on-secondary-container": "#6b6158",
+                        "surface-container-high": "#eae7e7",
+                        "secondary": "#675d54",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#f5ebe0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Montserrat"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Montserrat"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    },
+                    "boxShadow": {
+                        "luxe": "0px 20px 40px rgba(26, 26, 26, 0.04)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased overflow-x-hidden selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-[24px]">spa</span>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-widest uppercase">OH LALÁ! NAILS</h1>
+</div>
+<button class="bg-[#1A1A1A] text-white px-6 py-3 font-label-caps text-label-caps hover:bg-opacity-90 transition-opacity">
+            BOOK NOW
+        </button>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-90" data-alt="A high-fashion, editorial close-up of elegantly manicured hands with soft gel nails. The lighting is soft and diffused, emphasizing the pristine nude and blush tones of the nail art against a warm, minimalist background. The aesthetic is luxurious, clean, and highly sophisticated, capturing the essence of a premium nail atelier." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4EnIIfV3Wset6cgb_AGpEbNI2n_azS-NeTPILPxbDMhvjPPI4HF5Jm2A1r0V9JWl4PxaKJ2satFZKbIgVR9T0dXWQlSY1aQ-PT2qeyZCl1Q0A_EWjvIkF4g2bjmbQDBDy26PcQ8udMVsrGEIKBVT74ngD8dZqAbBqfZ1PdeHfcS5Zc5fBYjvgHC2rNDJagja5eLzJJAd_7jCA-0d9Oz42VtZJWe-FNTjv3cwGHo1303NdkL-8kmnE"/>
+<div class="absolute inset-0 bg-surface/40"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-8 py-section-gap">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">La Paz, Canelones</span>
+<h2 class="font-display-lg text-display-lg md:text-[80px] leading-tight text-on-surface">Elegance &amp; Precision<br/>for Your Nails</h2>
+<div class="h-[1px] w-24 bg-on-surface/20 mx-auto my-4"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Experience minimalist luxury and meticulous craftsmanship in every detail.</p>
+<button class="mt-8 bg-[#1A1A1A] text-white px-10 py-5 font-label-caps text-label-caps tracking-widest hover:bg-opacity-90 transition-all duration-300 border border-[#1A1A1A]">
+                    BOOK APPOINTMENT
+                </button>
+</div>
+</section>
+<!-- Value Pillars -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-bright">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-12 flex flex-col items-center text-center gap-6 group hover:bg-surface transition-colors duration-500 border border-transparent hover:border-secondary-fixed">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-secondary-fixed text-3xl">architecture</span>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Precision Technique</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Flawless execution with meticulous attention to detail for enduring elegance.</p>
+</div>
+<div class="p-12 flex flex-col items-center text-center gap-6 group hover:bg-surface transition-colors duration-500 border border-transparent hover:border-secondary-fixed">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-secondary-fixed text-3xl">brush</span>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Custom Nail Art</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Bespoke designs tailored to your unique aesthetic, from minimalist lines to complex patterns.</p>
+</div>
+<div class="p-12 flex flex-col items-center text-center gap-6 group hover:bg-surface transition-colors duration-500 border border-transparent hover:border-secondary-fixed">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-on-secondary-fixed text-3xl">verified</span>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface">Premium Products</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Exclusive, high-quality materials ensuring safe application and lasting results.</p>
+</div>
+</div>
+</section>
+<!-- Special Promo Banner -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-container-max mx-auto bg-[#1A1A1A] text-surface p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="absolute -right-20 -top-20 w-96 h-96 bg-primary-container rounded-full blur-[100px] opacity-20"></div>
+<div class="relative z-10 flex flex-col gap-6 max-w-xl">
+<span class="inline-block px-4 py-2 bg-tertiary-container text-on-tertiary-container font-label-caps text-label-caps w-max uppercase tracking-wider">Limited Offer</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-surface-bright leading-tight">Soft Gel Promo<br/>2 x $1000</h2>
+<p class="font-body-md text-body-md text-surface-variant opacity-80">Bring a friend and experience our signature soft gel manicure at a special rate.</p>
+</div>
+<div class="relative z-10">
+<button class="bg-surface-bright text-[#1A1A1A] px-10 py-5 font-label-caps text-label-caps tracking-widest hover:bg-surface transition-colors duration-300">
+                        CLAIM OFFER
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8 bg-surface-container border-t border-outline-variant">
+<div class="font-headline-md text-headline-md text-on-surface">OH LALÁ! NAILS</div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-300 focus:underline underline-offset-4" href="#">SERVICES</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-300 focus:underline underline-offset-4" href="#">GALLERY</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-300 focus:underline underline-offset-4" href="#">LOCATION</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-300 focus:underline underline-offset-4" href="#">CONTACT</a>
+</nav>
+<div class="font-body-md text-body-md text-on-surface-variant text-center md:text-right">
+            © 2024 OH LALÁ! NAILS ATELIER. LA PAZ, CANELONES.
+        </div>
+</footer>
+<!-- Floating WhatsApp CTA -->
+<a aria-label="Contact on WhatsApp" class="fixed bottom-8 right-8 z-50 bg-[#1A1A1A] text-white w-16 h-16 flex items-center justify-center rounded-full shadow-luxe hover:scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined text-[32px]">chat</span>
+</a>
+</body></html>
