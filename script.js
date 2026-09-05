@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-// ===== SLIDER (CORREGIDO) =====
+    // ===== SLIDER (CORREGIDO) =====
     const slides = document.querySelectorAll('.slide');
     const prevBtn = document.getElementById('prevSlide');
     const nextBtn = document.getElementById('nextSlide');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Función para iniciar/reiniciar el auto-cambio
         function startAutoSlide() {
             // Primero limpiamos cualquier intervalo que exista para que no se dupliquen
-            clearInterval(slideInterval); 
+            clearInterval(slideInterval);
             // Creamos uno nuevo
             slideInterval = setInterval(() => {
                 showSlide(currentSlide + 1);
@@ -73,9 +73,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ===== POPUP PROMO INICIAL =====
+    const promoPopup = document.getElementById('promoPopup');
+    const closePromoPopup = document.getElementById('closePromoPopup');
+
+    if (promoPopup && closePromoPopup) {
+        // Generar bolitas/chispas flotantes para el fondo del popup
+        const popupSparkleContainer = promoPopup.querySelector('.promo-sparkles');
+        if (popupSparkleContainer) {
+            for (let i = 0; i < 20; i++) {
+                const sparkle = document.createElement('span');
+                sparkle.className = 'promo-sparkle';
+                sparkle.style.setProperty('--sparkle-left', `${Math.random() * 98}%`);
+                sparkle.style.setProperty('--sparkle-top', `${Math.random() * 98}%`);
+                sparkle.style.setProperty('--sparkle-size', `${Math.random() * 6 + 3}px`);
+                sparkle.style.setProperty('--sparkle-delay', `${Math.random() * 4}s`);
+                sparkle.style.setProperty('--sparkle-duration', `${Math.random() * 2 + 3}s`);
+                popupSparkleContainer.appendChild(sparkle);
+            }
+        }
+
+        // Mostrar popup al cargar la página y desactivar scroll de fondo
+        promoPopup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Función para cerrar el popup y restaurar la página a la normalidad
+        const closePopup = () => {
+            promoPopup.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        // Cerrar al hacer clic en el botón de cerrar
+        closePromoPopup.addEventListener('click', closePopup);
+
+        // Cerrar al hacer clic fuera del contenido del popup (en el fondo)
+        promoPopup.addEventListener('click', (e) => {
+            if (e.target === promoPopup || e.target.classList.contains('promo-sparkles')) {
+                closePopup();
+            }
+        });
+
+        // Cerrar al presionar la tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && promoPopup.classList.contains('active')) {
+                closePopup();
+            }
+        });
+    }
+
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const observerOptions = {
         threshold: 0.2 // Se activa cuando el 20% de la sección es visible
     };
@@ -98,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('sidebar');
 
     // Abrir y cerrar manual (los botones)
-    if(openBtn && closeBtn && sidebar) {
+    if (openBtn && closeBtn && sidebar) {
         openBtn.addEventListener('click', () => sidebar.classList.add('active'));
         closeBtn.addEventListener('click', () => sidebar.classList.remove('active'));
 
@@ -108,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             l.addEventListener('click', () => sidebar.classList.remove('active'));
         });
     }
-    
+
     // ... resto de tus funciones (Slider, etc) ...
 });
 

@@ -769,6 +769,106 @@ address.footer-info {
     transition: transform 0.3s ease;
 }
 
+/* POPUP PROMO INICIAL */
+.promo-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    background: rgba(26, 26, 26, 0.92);
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+    overflow: hidden;
+}
+
+.promo-popup::before {
+    content: '';
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: rgba(245, 235, 224, 0.15);
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+.promo-popup.active {
+    display: flex;
+}
+
+.promo-popup-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    width: 100%;
+    max-height: 85vh;
+}
+
+.promo-popup-img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.promo-popup-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.promo-popup-close:hover {
+    transform: scale(1.1);
+    background: #f6f3f2;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-popup-wrapper {
+        max-width: 95%;
+    }
+
+    .promo-popup-close {
+        top: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        font-size: 1.3rem;
+    }
+}
+
 @keyframes promo-pop {
     0% {
         transform: scale(1);
