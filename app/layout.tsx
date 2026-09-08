@@ -3,6 +3,7 @@ import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import ClientScripts from "@/components/ClientScripts";
 import StructuredData from "./structured-data";
+import { Analytics } from "@vercel/analytics/react";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -93,6 +94,7 @@ export default function RootLayout({
       className={`${montserrat.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Analytics />
         <StructuredData />
         {children}
         <ClientScripts />
