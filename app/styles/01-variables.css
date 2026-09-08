@@ -1,0 +1,53 @@
+/* === Variables & Reset === */
+:root {
+    --surface: #fcf9f8;
+    --surface-low: #f6f3f2;
+    --surface-high: #eae7e7;
+    --surface-border: #cec5bc;
+    --primary: #645d55;
+    --secondary: #675d54;
+    --tertiary: #6c5a5b;
+    --tertiary-soft: #ffe7e8;
+    --neutral: #1a1a1a;
+    --neutral-soft: #4b463f;
+    --white: #ffffff;
+    --shadow-luxe: 0 20px 40px rgba(26, 26, 26, 0.04);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 92px;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(246, 221, 221, 0.45), transparent 40%),
+        radial-gradient(circle at 80% 10%, rgba(238, 224, 213, 0.55), transparent 45%),
+        var(--surface);
+    color: var(--neutral);
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.icon-svg {
+    display: flex;
+    align-items: center;
+}

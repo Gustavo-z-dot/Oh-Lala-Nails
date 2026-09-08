@@ -1,0 +1,139 @@
+/* === Promo Section === */
+.promo-section {
+    padding: 112px 0;
+    background: var(--surface);
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.promo-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.promo-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.promo-card {
+    width: min(100%, 980px);
+    padding: clamp(32px, 5vw, 72px);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    background: #1a1a1a;
+    box-shadow: var(--shadow-luxe);
+    transition: transform 0.35s ease;
+}
+
+.promo-card::before {
+    content: '';
+    position: absolute;
+    right: -160px;
+    top: -190px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(245, 235, 224, 0.15);
+    filter: blur(80px);
+}
+
+.promo-kicker {
+    display: inline-block;
+    padding: 7px 12px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.promo-card h2 {
+    position: relative;
+    color: var(--white);
+    font-family: var(--font-playfair), serif;
+    font-size: clamp(2rem, 5vw, 3.3rem);
+    line-height: 1.1;
+}
+
+.promo-price {
+    position: relative;
+    margin: 10px 0 18px;
+    color: var(--white);
+    font-family: var(--font-playfair), serif;
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    line-height: 1;
+}
+
+.promo-price.promo-pop {
+    animation: promo-pop 0.55s ease;
+}
+
+.promo-description {
+    position: relative;
+    color: rgba(255, 255, 255, 0.84);
+    max-width: 520px;
+}
+
+.promo-actions {
+    margin-top: 28px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-promo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 176px;
+    min-height: 48px;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    font-size: 0.68rem;
+    font-weight: 600;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.btn-promo-primary {
+    border: 1px solid var(--white);
+    background: var(--white);
+    color: var(--neutral);
+}
+
+.btn-promo-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    color: var(--white);
+    background: transparent;
+}
+
+.btn-promo:hover {
+    transform: translateY(-2px);
+    opacity: 0.93;
+}
+
+.promo-sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.promo-sparkle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.75);
+    width: var(--sparkle-size, 6px);
+    height: var(--sparkle-size, 6px);
+    left: var(--sparkle-left, 50%);
+    top: var(--sparkle-top, 50%);
+    opacity: 0;
+    animation: promo-float var(--sparkle-duration, 4.5s) ease-in-out var(--sparkle-delay, 0s) infinite;
+}

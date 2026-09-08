@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "./styles/01-variables.css";
+@import "./styles/02-header.css";
+@import "./styles/03-sidebar.css";
+@import "./styles/04-hero.css";
+@import "./styles/05-promo.css";
+@import "./styles/06-services.css";
+@import "./styles/07-gallery.css";
+@import "./styles/08-location.css";
+@import "./styles/09-contact.css";
+@import "./styles/10-modal.css";
+@import "./styles/11-popup.css";
+@import "./styles/12-floating-whatsapp.css";
+@import "./styles/13-animations.css";
+@import "./styles/14-responsive.css";

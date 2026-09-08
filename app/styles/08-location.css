@@ -1,0 +1,62 @@
+/* === Location Section === */
+.location {
+    background: var(--surface);
+    padding: 120px 0;
+    text-align: center;
+}
+
+.location-content h2 {
+    font-family: var(--font-playfair), serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.location-content p {
+    color: var(--neutral-soft);
+    max-width: 760px;
+    margin: 0 auto 28px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto 26px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--shadow-luxe);
+    line-height: 0;
+}
+
+.map-container iframe {
+    transition: filter 0.3s ease;
+    filter: grayscale(0.18);
+}
+
+.map-container iframe:hover {
+    filter: grayscale(0);
+}
+
+.btn-location {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 12px 28px;
+    border: 1px solid var(--neutral);
+    background: var(--neutral);
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.69rem;
+    font-weight: 600;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.btn-location:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}

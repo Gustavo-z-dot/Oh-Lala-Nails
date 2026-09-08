@@ -1,0 +1,88 @@
+/* === Services Section === */
+.services {
+    padding: 120px 0;
+    text-align: center;
+    background: var(--surface-low);
+}
+
+.services h2 {
+    font-family: var(--font-playfair), serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.services-subtitle {
+    color: var(--neutral-soft);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.74rem;
+    font-weight: 600;
+    margin-bottom: 34px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.service-card {
+    background: var(--white);
+    box-shadow: var(--shadow-luxe);
+    border: 1px solid var(--surface-border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transform: none;
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: none;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+}
+
+.service-img-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-bottom: 1px solid var(--surface-border);
+}
+
+.service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+    cursor: zoom-in;
+}
+
+.service-card:hover .service-img {
+    transform: scale(1.06);
+}
+
+.service-info {
+    padding: 22px 18px;
+}
+
+.service-info h3 {
+    font-family: var(--font-playfair), serif;
+    font-size: 1.55rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--neutral);
+}
+
+.price {
+    color: var(--secondary);
+    font-size: 1.15rem;
+    font-weight: 600;
+}

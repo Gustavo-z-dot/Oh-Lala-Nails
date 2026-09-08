@@ -1,0 +1,38 @@
+/* === Image Modal === */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.9);
+    padding: 90px 20px 30px;
+}
+
+.image-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content-wrapper {
+    position: relative;
+    width: min(900px, 92%);
+    height: min(82vh, 90%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.close-modal {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    width: 40px;
+    height: 40px;
+    color: var(--white);
+    background: transparent;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+}

@@ -1,0 +1,128 @@
+/* === Contact & Footer Section === */
+.contact-section {
+    background:
+        linear-gradient(rgba(28, 27, 27, 0.82), rgba(28, 27, 27, 0.88)),
+        url('/footer.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 96px 0 22px;
+}
+
+.contact-content {
+    text-align: center;
+}
+
+.contact-content h2 {
+    font-family: var(--font-playfair), serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: var(--white);
+}
+
+.contact-content p {
+    color: var(--white);
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.btn-contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    min-height: 50px;
+    padding: 12px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.67rem;
+    font-weight: 600;
+    background: transparent;
+    transition: background-color 0.25s ease;
+}
+
+.btn-contact.whatsapp,
+.btn-contact.instagram {
+    background: transparent;
+}
+
+.btn-contact:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.footer-content {
+    margin-top: 58px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 34px;
+    text-align: center;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-playfair), serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer-brand p,
+.footer-info p,
+.footer-info a,
+.footer-bottom {
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.footer-info h4,
+.footer-social h4 {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.72rem;
+    margin-bottom: 14px;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+}
+
+address.footer-info {
+    font-style: normal;
+}
+
+.footer-info a {
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.social-icons img {
+    width: 32px;
+    height: 32px;
+    filter: grayscale(0.04);
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: translateY(-2px) scale(1.07);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+}

@@ -1,0 +1,98 @@
+/* === Hero / Slider === */
+.hero {
+    position: relative;
+    min-height: calc(90vh - 80px);
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 4;
+    color: var(--white);
+    max-width: 760px;
+}
+
+.hero-content h1,
+.hero-content h2 {
+    font-family: var(--font-playfair), serif;
+    font-size: clamp(2.25rem, 9vw, 4.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2.7vw, 1.15rem);
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 36px;
+    min-width: 220px;
+    min-height: 52px;
+    padding: 12px 28px;
+    border: 1px solid var(--neutral);
+    background: var(--neutral);
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.btn-hero:hover {
+    opacity: 0.92;
+    transform: translateY(-2px);
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 50%;
+    background: rgba(26, 26, 26, 0.35);
+    color: var(--white);
+    font-size: 1.15rem;
+    cursor: pointer;
+}
+
+.prev {
+    left: 14px;
+}
+
+.next {
+    right: 14px;
+}

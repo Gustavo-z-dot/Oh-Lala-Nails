@@ -1,0 +1,23 @@
+/* === Floating WhatsApp === */
+.floating-whatsapp {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1300;
+}
+
+.floating-whatsapp:hover {
+    transform: translateY(-2px) scale(1.07);
+}
+
+.floating-whatsapp img {
+    width: 32px;
+    height: 32px;
+    filter: grayscale(0.04);
+    transition: transform 0.3s ease;
+}
