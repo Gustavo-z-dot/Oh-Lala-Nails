@@ -79,7 +79,7 @@ export const galleryImages: { src: string; alt: string }[] = [
 export const promo = {
     kicker: "PROMOCION ESPECIAL",
     title: "Promo Soft Gel",
-    price: "2 X $1000",
+    price: "2 x $1000",
     description: "Veni con quien quieras y disfrutá de nuestra promoción especial.",
     ctaPrimary: { href: "https://wa.me/59891040117", label: "RESERVAR AHORA" },
     ctaSecondary: { href: "#galeria", label: "VER TRABAJOS" },
