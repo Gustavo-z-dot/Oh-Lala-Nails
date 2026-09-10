@@ -1,4 +1,4 @@
-/* === Promo Popup === */
+﻿/* === Promo Popup === */
 .promo-popup {
     display: none;
     position: fixed;
@@ -54,8 +54,8 @@
     right: -12px;
     width: 36px;
     height: 36px;
-    background: #ffffff;
-    color: #1a1a1a;
+    background: var(--white);
+    color: var(--neutral);
     border: none;
     border-radius: 50%;
     font-size: 1.5rem;
@@ -71,5 +71,5 @@
 
 .promo-popup-close:hover {
     transform: scale(1.1);
-    background: #f6f3f2;
+    background: var(--surface-high);
 }

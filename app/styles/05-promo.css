@@ -1,4 +1,4 @@
-/* === Promo Section === */
+﻿/* === Promo Section === */
 .promo-section {
     padding: 112px 0;
     background: var(--surface);
@@ -25,7 +25,7 @@
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 2px;
-    background: #1a1a1a;
+    background: var(--neutral);
     box-shadow: var(--shadow-luxe);
     transition: transform 0.35s ease;
 }

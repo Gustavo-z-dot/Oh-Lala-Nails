@@ -1,11 +1,11 @@
-/* === Contact & Footer Section === */
+﻿/* === Contact & Footer Section === */
 .contact-section {
     background:
         linear-gradient(rgba(28, 27, 27, 0.82), rgba(28, 27, 27, 0.88)),
         url('/footer.png');
     background-size: cover;
     background-position: center;
-    color: var(--white);
+    color: #ffffff;
     padding: 96px 0 22px;
 }
 
@@ -19,11 +19,11 @@
     line-height: 1.2;
     font-weight: 600;
     margin-bottom: 14px;
-    color: var(--white);
+    color: #ffffff;
 }
 
 .contact-content p {
-    color: var(--white);
+    color: #ffffff;
 }
 
 .contact-buttons {
@@ -42,7 +42,7 @@
     min-height: 50px;
     padding: 12px 24px;
     border: 1px solid rgba(255, 255, 255, 0.85);
-    color: var(--white);
+    color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.15em;

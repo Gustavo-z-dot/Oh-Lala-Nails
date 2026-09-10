@@ -1,4 +1,4 @@
-/* === Variables & Reset === */
+﻿/* === Variables & Reset === */
 :root {
     --surface: #fcf9f8;
     --surface-low: #f6f3f2;
@@ -75,6 +75,33 @@
         radial-gradient(circle at 15% 20%, rgba(90, 60, 50, 0.15), transparent 40%),
         radial-gradient(circle at 80% 10%, rgba(60, 40, 30, 0.2), transparent 45%),
         var(--surface) !important;
+}
+
+/* ===== Dark: Additional text/background overrides ===== */
+
+[data-theme="dark"] .gallery-header h2 {
+    color: var(--neutral);
+}
+
+[data-theme="dark"] .services h2 {
+    color: var(--neutral);
+}
+
+[data-theme="dark"] .location-content h2 {
+    color: var(--neutral);
+}
+
+[data-theme="dark"] .price {
+    color: var(--secondary);
+}
+
+[data-theme="dark"] .promo-popup-close {
+    color: var(--neutral);
+    background: var(--surface-high);
+}
+
+[data-theme="dark"] .sidebar {
+    background: var(--surface-high);
 }
 
 * {
