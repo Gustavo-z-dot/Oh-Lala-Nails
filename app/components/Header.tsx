@@ -1,6 +1,7 @@
 ﻿import Image from "next/image";
 import { memo } from "react";
 import { navLinks } from "../_data";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = memo(function Header() {
     return (
@@ -10,6 +11,8 @@ const Header = memo(function Header() {
                     <Image src="/logo.png" alt="Oh Lalá! Nails" width={34} height={34} style={{ width: "auto", height: "34px" }} />
                     <span>OH LALÁ! NAILS</span>
                 </a>
+
+                <ThemeToggle />
 
                 <nav className="main-nav" aria-label="Navegación principal">
                     <ul>

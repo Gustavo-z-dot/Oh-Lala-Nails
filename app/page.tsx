@@ -9,6 +9,7 @@ import Gallery from "./components/Gallery";
 import ContactSection from "./components/ContactSection";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import PromoPopup from "./components/PromoPopup";
+import FloatingThemeToggle from "./components/FloatingThemeToggle";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <Gallery />
         <ContactSection />
         <FloatingWhatsApp />
+        <FloatingThemeToggle />
         <PromoPopup />
       </main>
     </>
