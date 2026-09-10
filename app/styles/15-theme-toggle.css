@@ -1,4 +1,4 @@
-/* === Theme Toggle Button === */
+﻿/* === Theme Toggle Button === */
 
 .theme-toggle {
     display: flex;
@@ -11,6 +11,11 @@
     margin: 0;
     outline: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+/* Hidden until mount — avoids hydration flash */
+.theme-toggle-hidden {
+    visibility: hidden;
 }
 
 /* Pill track */
@@ -144,3 +149,4 @@ header .theme-toggle {
         display: none;
     }
 }
+

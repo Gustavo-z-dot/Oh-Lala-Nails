@@ -1,49 +1,42 @@
-"use client";
+﻿"use client";
 
-import { memo, useState, useEffect, useCallback, useRef } from "react";
+import { memo, useState, useEffect, useCallback } from "react";
 
 type Theme = "light" | "dark";
 
-function getInitialTheme(): Theme {
-    if (typeof window === "undefined") return "light";
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored === "light" || stored === "dark") return stored;
-    return "light";
-}
-
 export const ThemeToggle = memo(function ThemeToggle() {
     const [theme, setTheme] = useState<Theme>("light");
-    const mounted = useRef(false);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        setTheme(getInitialTheme());
-        mounted.current = true;
+        const stored = localStorage.getItem("theme") as Theme | null;
+        if (stored === "light" || stored === "dark") {
+            setTheme(stored);
+        }
+        setMounted(true);
     }, []);
 
-    // Sync theme to <html> data attribute
+    // Sync theme to <html> when it changes (only after mount to avoid hydration mismatch)
     useEffect(() => {
+        if (!mounted) return;
         document.documentElement.setAttribute("data-theme", theme);
         localStorage.setItem("theme", theme);
-    }, [theme]);
+    }, [theme, mounted]);
 
     const toggle = useCallback(() => {
         setTheme((prev) => (prev === "light" ? "dark" : "light"));
     }, []);
 
-    // Don't render until mounted to avoid hydration mismatch
-    if (!mounted.current) return null;
-
     return (
         <button
             type="button"
-            className="theme-toggle"
+            className={`theme-toggle${mounted ? "" : " theme-toggle-hidden"}`}
             onClick={toggle}
             aria-label={theme === "light" ? "Activar modo oscuro" : "Activar modo claro"}
             aria-live="polite"
         >
             <span className="theme-toggle-track">
-                <span className={`theme-toggle-thumb ${theme}`}>
-                    {/* Sun icon */}
+                <span className={`theme-toggle-thumb ${mounted ? theme : ""}`}>
                     <svg
                         className="theme-icon sun"
                         viewBox="0 0 24 24"
@@ -64,7 +57,6 @@ export const ThemeToggle = memo(function ThemeToggle() {
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                     </svg>
-                    {/* Moon icon */}
                     <svg
                         className="theme-icon moon"
                         viewBox="0 0 24 24"

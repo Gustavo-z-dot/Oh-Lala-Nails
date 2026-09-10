@@ -1,40 +1,38 @@
-"use client";
-
-import { memo, useState, useEffect, useCallback, useRef } from "react";
+﻿"use client";
+import { memo, useState, useEffect, useCallback } from "react";
 
 type Theme = "light" | "dark";
 
 const FloatingThemeToggle = memo(function FloatingThemeToggle() {
     const [theme, setTheme] = useState<Theme>("light");
-    const mounted = useRef(false);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
         const stored = localStorage.getItem("theme") as Theme | null;
         if (stored === "light" || stored === "dark") setTheme(stored);
-        mounted.current = true;
+        setMounted(true);
     }, []);
 
     useEffect(() => {
+        if (!mounted) return;
         document.documentElement.setAttribute("data-theme", theme);
         localStorage.setItem("theme", theme);
-    }, [theme]);
+    }, [theme, mounted]);
 
     const toggle = useCallback(() => {
         setTheme((prev) => (prev === "light" ? "dark" : "light"));
     }, []);
 
-    if (!mounted.current) return null;
-
     return (
         <button
             type="button"
-            className="theme-toggle-floating"
+            className={`theme-toggle-floating${mounted ? "" : " theme-toggle-hidden"}`}
             onClick={toggle}
             aria-label={theme === "light" ? "Activar modo oscuro" : "Activar modo claro"}
             aria-live="polite"
         >
             <span className="theme-toggle-track">
-                <span className={`theme-toggle-thumb ${theme}`}>
+                <span className={`theme-toggle-thumb ${mounted ? theme : ""}`}>
                     <svg
                         className="theme-icon sun"
                         viewBox="0 0 24 24"
@@ -74,3 +72,6 @@ const FloatingThemeToggle = memo(function FloatingThemeToggle() {
 });
 
 export default FloatingThemeToggle;
+
+
+
