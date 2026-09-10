@@ -1,4 +1,4 @@
-﻿/* === Variables & Reset === */
+/* === Variables & Reset === */
 :root {
     --surface: #fcf9f8;
     --surface-low: #f6f3f2;
@@ -14,107 +14,10 @@
     --shadow-luxe: 0 20px 40px rgba(26, 26, 26, 0.04);
 }
 
-/* === Dark Theme Overrides === */
-[data-theme="dark"] {
-    --surface: #171412;
-    --surface-low: #1e1a17;
-    --surface-high: #2a2522;
-    --surface-border: #3a3430;
-    --primary: #d4c5b8;
-    --secondary: #c4b5a5;
-    --tertiary: #a07a7a;
-    --tertiary-soft: #3a2526;
-    --neutral: #f0ebe7;
-    --neutral-soft: #b5aba3;
-    --white: #1a1a1a;
-    --shadow-luxe: 0 20px 40px rgba(0, 0, 0, 0.3);
-    color-scheme: dark;
-}
-
-[data-theme="dark"] body {
-    background:
-        radial-gradient(circle at 15% 20%, rgba(90, 60, 50, 0.15), transparent 40%),
-        radial-gradient(circle at 80% 10%, rgba(60, 40, 30, 0.2), transparent 45%),
-        var(--surface);
-}
-
-[data-theme="dark"] header {
-    background: rgba(23, 20, 18, 0.92);
-}
-
-[data-theme="dark"] .promo-card {
-    border-color: rgba(255, 255, 255, 0.08);
-}
-
-[data-theme="dark"] .gallery-section {
-    background: var(--surface-low);
-}
-
-[data-theme="dark"] .contact-section {
-    background: var(--surface);
-}
-
-[data-theme="dark"] .service-card {
-    background: var(--surface-low);
-}
-
-[data-theme="dark"] .promo-section {
-    background: var(--surface);
-}
-
-[data-theme="dark"] .location {
-    background: var(--surface-low);
-}
-
-[data-theme="dark"] .promo-popup {
-    background: rgba(0, 0, 0, 0.85);
-}
-
-[data-theme="dark"] .not-found {
-    background:
-        radial-gradient(circle at 15% 20%, rgba(90, 60, 50, 0.15), transparent 40%),
-        radial-gradient(circle at 80% 10%, rgba(60, 40, 30, 0.2), transparent 45%),
-        var(--surface) !important;
-}
-
-/* ===== Dark: Additional text/background overrides ===== */
-
-[data-theme="dark"] .gallery-header h2 {
-    color: var(--neutral);
-}
-
-[data-theme="dark"] .services h2 {
-    color: var(--neutral);
-}
-
-[data-theme="dark"] .location-content h2 {
-    color: var(--neutral);
-}
-
-[data-theme="dark"] .price {
-    color: var(--secondary);
-}
-
-[data-theme="dark"] .promo-popup-close {
-    color: var(--neutral);
-    background: var(--surface-high);
-}
-
-[data-theme="dark"] .sidebar {
-    background: var(--surface-high);
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Smooth theme transitions */
-*,
-*::before,
-*::after {
-    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 html {
